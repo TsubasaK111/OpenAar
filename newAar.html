@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app='newAar'>
+
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="angular.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="frameworker.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+  <link rel='stylesheet' type="text/css" href='default.css'>
+</head>
+
+<body ng-controller='MissionController as msnCtrl'>
+
+  <header>
+    OpenAar
+  </header>
+
+  <!-- Mission Phase Tabs  -->
+  <section ng-controller="TabController as tab">
+
+    <ul class="nav nav-tabs">
+      <li ng-class="{ active:tab.isSet(0) }">
+        <a href ng-click="tab.setTab(0)">FW Mgmt</a>
+      </li>
+      <li ng-class="{ active:tab.isSet(1) }">
+        <a href ng-click="tab.setTab(1)">Plan</a>
+      </li>
+      <li ng-class="{ active:tab.isSet(2) }">
+        <a href ng-click="tab.setTab(2)">Execute</a>
+      </li>
+      <li ng-class="{ active:tab.isSet(3) }">
+        <a href ng-click="tab.setTab(3)">Assess</a>
+      </li>
+    </ul>
+
+    <!-- FW Mgmt's Content -->
+    <framework-tab ng-show="tab.isSet(0)"></framework-tab>
+
+    <!--  Plan Tab's Content  -->
+    <div ng-show="tab.isSet(1)">
+      <h2>Plan</h2>
+      <blockquote>{{mission.plan}}</blockquote>
+    </div>
+
+    <!--  Execute Tab's Content  -->
+    <div ng-show="tab.isSet(2)">
+      <h2>Execute</h2>
+      <blockquote>{{mission.execute}}</blockquote>
+    </div>
+
+    <!--  Assess Tab's Content  -->
+      <assess-tab ng-show="tab.isSet(3)"></assess-tab>
+
+</section>
+
+<div id=footer ng-controller='TestController as TestCtrl'>
+  FujiProvingGrounds, 2015.<br>
+  All Rights Reserved.
+</div>
+
+</body>
+</html>
+
+<!--https://en.wikipedia.org/wiki/After-action_review-->
+<!--http://betterevaluation.org/evaluation-options/after_action_review-->
+<!--http://www.kstoolkit.org/After+Action+Review-->
+<!--http://www.afteraction.com-->

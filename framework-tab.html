@@ -1,0 +1,56 @@
+
+<h2>Frameworks</h2>
+
+<!--  Listing of Frameworks -->
+<div ng-repeat='fw in fwCtrl.library'>
+  <blockquote>
+    <strong>{{fw.name}}</strong><br>
+    {{fw.purpose}}<br>
+    {{fw.fields}}<br>
+    context: {{fw.context}}<br>
+  <cite class="clearfix"> - by {{fw.author}} at {{fw.dateCreated | date:'medium'}}</cite>
+</blockquote>
+</div>
+
+<!--  Framework Form -->
+<form name="addFwForm" ng-submit="fwCtrl.addFramework()">
+
+  <!--  Live Preview -->
+  <blockquote ng-hide='fwCtrl.newFrameworkIsEmpty()'>
+    <strong>{{fwCtrl.newFramework.name}}</strong><br>
+    context: {{fwCtrl.newFramework.context}}<br>
+  {{fwCtrl.newFramework.purpose}}<br>
+    <cite class="clearfix"> - by {{fwCtrl.newFramework.author}} at {{Date.now() | date:'medium'}}</cite>
+  </blockquote>
+
+  <!--  Le Form -->
+  <h4>Add a Framework</h4>
+  <fieldset class="form-group">
+    <input ng-model="fwCtrl.newFramework.name"  class="form-control" placeholder="Framework Name" title="Title" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <textarea ng-model="fwCtrl.newFramework.purpose" class="form-control" placeholder="Write a brief explanation of this framework!" title="Purpose" ></textarea>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <textarea ng-model="fwCtrl.newFramework.fields" class="form-control" placeholder="input fields separated by commas (eg: plan ,do, check, action)" title="fields"></textarea>
+  </fieldset>
+
+  <fieldset class = "form-group">
+    <input ng-model="fwCtrl.newFramework.context" class="form-control" placeholder="describe the context of this framework in one word" title="context" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input ng-model="fwCtrl.newFramework.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+  </fieldset>
+
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+  </fieldset>
+  <!-- <fieldset class="form-group">
+    <select ng-model="fwCtrl.newFramework.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+      <option value>Rate the Framework</option>
+    </select>
+  </fieldset> -->
+</form>
