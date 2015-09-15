@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Noto Sans'), local('NotoSans'), url(http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nJBw1xU1rKptJj_0jans920.woff2) format('woff2'), url(http://fonts.gstatic.com/s/notosans/v6/LeFlHvsZjXu2c3ZRgBq9nLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+
+
+/* these selectors don't work for some reason...*/
+
+/*html body h1 h2 h3 h4 ol ul li p a {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 100%;
+    font-weight: 100;
+    font-family: 'Noto Sans', Helvetica, Garamond, serif;
+    }*/
+
+
+/* this asterisk selector, however, does: */
+* {
+  font-family: 'Noto Sans';
+}
+
+body {
+  background-color: #222222;
+  color: #bbbbbb;
+}
+
+header {
+  background-color: #e00000;
+  color: #222222;
+  padding: 5 10 5 10;
+  text-align: center;
+  font-weight: 700;
+  font-size: 200%;
+}
+
+p {
+}
+
+#squeeze {
+  color: #f0f0f0;
+  font-weight: 700;
+}
+
+#footer {
+  font-size: 10px;
+  color: #555555;
+}
+
+form {
+  width: 50dp;
+}
