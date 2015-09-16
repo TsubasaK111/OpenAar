@@ -2,7 +2,7 @@
 
   var app = angular.module('newAar', ["frameworker"]);
 
-// lessons learned:
+// Lessons Learned:
 // 1. dependencies are module names, NOT filenames. (do not append .js at the end!)
 // 2. objects need to be placed in the module that uses the object.
 // 3. use Angular.js (not minified) for human readable error reports.
